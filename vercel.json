@@ -1,15 +1,24 @@
+
 {
   "version": 2,
   "builds": [
     {
       "src": "main.py",
       "use": "@vercel/python"
+    },
+    {
+      "src": "maintenance.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
+      "src": "/maintenance.html",
+      "dest": "/maintenance.html"
+    },
+    {
       "src": "/(.*)",
-      "dest": "main.py"
+      "dest": "/maintenance.html"
     }
   ]
 }
